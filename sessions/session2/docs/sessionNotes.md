@@ -87,17 +87,23 @@ He following users are created
 Ansible is an open source provisioning orchestration system curated by RedHat
 
    ![alt text](../docs/images/AnsibleArchitecture1.png "Figure AnsibleArchitecture1.png")
+   
+Some ansible projects are conveniently provided in the `/vagrant/ansible` folder which you should try as an introduction.
 
 ---
 **Exercise 2.3**
-
-Go through the [session2/vagrant-examples/example2-2/ansible](../../session2/vagrant-examples/example2-1/ansible) examples to run a simple set of ansible commands
+Go through the [session2/vagrant-examples/example2-2/ansible/project-ansible2-1](../../session2/vagrant-examples/example2-2/ansible/project-ansible2-1) examples to run a simple set of ansible commands
 * can you ping the servers using ansible
-* can you adapt any of the examples below and run them in your server
+---
 
 ---
-  
-Some ansible projects are conveniently provided in the `/vagrant/ansible` folder which you should try first.
+**Exercise 2.4**
+
+Go through the [session2/vagrant-examples/example2-2/ansible/project-ansible2-2](../../session2/vagrant-examples/example2-2/ansible/project-ansible2-2) examples to run a simple set of ansible playbooks
+* how do ubuntu and rocky differ in provisioning
+* how is the web page injected into the machines
+
+---
 
 Following that first attempt, there are some quite good tutorials here which you can adapt to your set up
 
@@ -105,4 +111,7 @@ Following that first attempt, there are some quite good tutorials here which you
 
 [Ansible Fundamentals Beyond the First Playbook](https://dev.to/anushree_gm/ansible-fundamentals-beyond-the-first-playbook-2gb4 )
 
-If you work through these tutorials, you do not need to install ansible because it is already installed on the `ansible controller` machine and the ansible .ssh keys are already generated.  
+Can you adapt any of these tutorials to run in your server?
+If you work through these tutorials, you do not need to install ansible because it is already installed on the `ansible controller` machine and the ansible .ssh keys are already generated.
+
+

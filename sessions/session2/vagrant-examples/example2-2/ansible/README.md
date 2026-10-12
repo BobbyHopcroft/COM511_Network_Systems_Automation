@@ -10,4 +10,6 @@ You can add you own ansible examples here and try them against the rocky and ubu
 
 ## Provided examples
 
-[project-ansible2-1](./project-ansible2-1) simple ansible ping example
+[project-ansible2-1](./project-ansible2-1) simple ansible ping example.
+
+[project-ansible2-2](./project-ansible2-2) simple ansible playbook examples.

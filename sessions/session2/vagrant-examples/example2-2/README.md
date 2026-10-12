@@ -34,7 +34,7 @@ Because we have 3 separately named machines starting in the same project, we nee
 vagrant ssh ansible_controller # or ubuntu_1 or rocky_1
 ```
 
-THis will land you in the `vagrant` user account
+This will land you in the `vagrant` user account
 
 From this account you can ssh into the other machines using the ansible or the admin user.
 If you do this from the vagrant account, you will be asked for passwords (minad1234)
@@ -61,19 +61,28 @@ ssh 192.168.56.20    #ubuntu_1
 ssh 192.168.56.30    #rocky_1
 ```
 
+You can also try using putty to ssh into the machines from your host machine.
 
-## additional notes and gotchas
+(putty is available to download from the [Putty download site](https://www.chiark.greenend.org.uk/~sgtatham/putty/) or from [microsoft store](https://apps.microsoft.com/detail/xpfnzksklbp7rj?hl=en-GB&gl=GB)
+
+   ![alt text](../../docs/images/putty1.png "Figure putty1.png")
+ 
+ 
+   
+Once you have completed the basic ssh tests, move on the ansible examples in the [ansible](./ansible) folder.
+
+## Additional notes and gotchas
 
 ### Problems with cpu in ubuntu 24.04
 
-there is a known bug in the ubuntu 24.04 virtual box which prevents it working correctly with more than one virtual cpu.
+There is a known bug in the ubuntu 24.04 bento box which prevents it working correctly with more than one virtual cpu in  VirtualBox.
 Using a higher cpu count can cause the VM to hang due to a race conditions between threads.
 
 ```
 vb.cpus = 1
 ```
 
-### wrong file endings in files imported with shared `\vagrant` folder
+### wrong MSDOS file endings in files imported with shared `\vagrant` folder
 
 One problem which can occur is that any files edited on a windows machine may have different encoding and line endings when run on a linux machine.
 
@@ -91,12 +100,20 @@ additional-config.sh: line 2: $'\r': command not found
 ```
 
 This can be fixed manually in the virtual machine by editing the file in the linux box using nano. 
+
 When you write the file, you may see 'saving as MSDOS'
-You can save as a linux file by using windows ALT with N key to change the save format.
 
-Once the format is changed, it whould be mapped corecyl when checked into github.
+   ![alt text](../../docs/images/nano-msdos1.png "Figure nano-msdos1.png")
+   
+   ![alt text](../../docs/images/nano-msdos2.png "Figure nano-msdos1.png")
+   
+You can save as a linux file by using windows ALT with D key to change the save format from MSDOS to linux.
+      
+   ![alt text](../../docs/images/nano-msdos3.png "Figure nano-msdos1.png")
 
-Another approach can be fixed in the virtual machine using sed with option -i for in-place editing, we delete the trailing \r directly in the input file.
+Once the format is changed, it should be mapped correctly when checked into github.
+
+Another approach can be to fix the files in the virtual machine using sed with option -i for in-place editing, we delete the trailing \r directly in the input file.
 
 ```
 sed -i 's/\r$//' filename
