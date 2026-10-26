@@ -74,10 +74,18 @@ Follow the notes  in [example3-1](../vagrant-examples/example3-1) to set up a dn
 * Make sure you understand the vagrant / virtualbox networking
 * Can you understand the dnsmasq DHCP configuration and how it is created with ansible
 * Can you use tcpdump to follow the DHCP requests and responses
+* Look at the DNS example. How does this work?
 
 ---
 
 
+---
+**Exercise 3.3**
+
+Follow the notes  in [example3-1/ansible/project-ansible3-2](../vagrant-examples/example3-1/ansible/project-ansible3-2) to set up a BIND DNS Server using ansible which can issue addresses
+
+
+---
 
 
 
